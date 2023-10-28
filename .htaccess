@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^izle/([0-9a-zA-Z-_]+)$ izle.php?yayin_seo=$1 [L,QSA]
+RewriteRule ^channel/watch/([0-9a-zA-Z-_]+)$ watchstream.php?yayin_seo=$1 [L,QSA]
+RewriteRule ^haber/([0-9a-zA-Z-_]+)$ haber.php?yazi_seourl=$1 [L,QSA]
+RewriteRule ^spor-haberleri/$  spor-haberleri.php [L,QSA]
+RewriteRule ^spor-haberleri$  spor-haberleri.php [L,QSA]
+RewriteRule ^spor-haberleri/page/([0-9]+)$ spor-haberleri.php?sayfa=$1 [L,QSA]
+RewriteRule ^admin/blog$  admin/blog.php [L,QSA]
+RewriteRule ^blog/([0-9]+)$ admin/blog.php?sayfa=$1 [L,QSA]
+RewriteRule ^maci-canli-izle/([0-9a-zA-Z-_]+)$ maci-canli-izle.php?yay覺n_seo=$1 [L,QSA]
+RewriteRule ^canli-izle/([0-9a-zA-Z-_]+)$ canli-izle.php?yay覺n_seo=$1 [L,QSA]
+RewriteRule ^blog/([0-9a-zA-Z-_]+)$ bloger.php?yazi_seourl=$1 [L,QSA]
+RewriteRule ^blog/$  blog.php [L,QSA]
+RewriteRule ^blog$  blog.php [L,QSA]
+RewriteRule ^blog/page/([0-9]+)$ blog.php?sayfa=$1 [L,QSA]
+RewriteRule ^404$  404.php [L,QSA]
+ErrorDocument 404     /404
+ErrorDocument 403    /404
+ErrorDocument 500    /404
+RewriteRule ^sitemap.xml sitemap.php [L,NC]
+RewriteRule ^robots.txt robots.php [L,NC]
+RewriteRule ^amp amp.php [L,NC]
